@@ -38,7 +38,7 @@ export function ChatBar({ messages, currentRoom }) {
 	}
 
     return (
-        <div className={classes.ChatBar}>          
+        <div className={classes.chatBar}>          
             <ChatHeader
                 seed={seed} 
                 roomName={currentRoom.roomName}

@@ -12,7 +12,7 @@ export const ChatBodyStyles = makeStyles((theme) => ({
         position: 'relative',
         fontSize: 16,
         padding: 10,
-        width: 'auto',
+        width: 'fit-content',
         borderRadius: 10,
         backgroundColor: '#ffffff',
         marginBottom: 30
@@ -21,7 +21,7 @@ export const ChatBodyStyles = makeStyles((theme) => ({
         position: 'relative',
         fontSize: 16,
         padding: 10,
-        width: 'auto',
+        width: 'fit-content',
         borderRadius: 10,
         backgroundColor: '#dcf8c9',
         marginBottom: 30,
