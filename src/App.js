@@ -7,7 +7,7 @@ import { useStateValue } from "./StateProvider";
 // componenets
 import Sidebar from './Sidebar';
 import Chat from './Chat';
-import Login from './Login';
+import { Login } from './Components/Login';
 
 function App() {
 	const [{ user }] = useStateValue();
