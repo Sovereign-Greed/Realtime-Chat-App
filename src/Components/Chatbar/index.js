@@ -17,10 +17,12 @@ export function ChatBar({ messages, currentRoom }) {
 		setSeed(Math.floor(Math.random() * 5000));
 	}, []);
 
+    // input on change handle
     const handleChange = (e) => {
         setInput(e.target.value);
     }
 
+    // message submit handle
     const sendMessage = async(e) => {
 		e.preventDefault();
 		

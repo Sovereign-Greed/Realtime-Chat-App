@@ -1,6 +1,7 @@
-import { InsertEmoticon, Mic } from '@material-ui/icons';
 import React from 'react';
 import { ChatFooterStyles } from './Styles';
+
+import { InsertEmoticon, Mic } from '@material-ui/icons';
 
 export function ChatFooter({ input, handleChange, sendMessage }) {
     const classes = ChatFooterStyles();
