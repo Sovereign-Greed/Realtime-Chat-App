@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 import { actionTypes, auth, provider, useStateValue } from "../../Redux";
 
 export function Login() {
-	const [user, dispatch] = useStateValue();
+	const [{}, dispatch] = useStateValue();
 	
 	const signIn = () => {
 		auth.signInWithPopup(provider)

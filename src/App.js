@@ -6,8 +6,10 @@ import { useStateValue } from "./StateProvider";
 
 // componenets
 import Sidebar from './Sidebar';
-import Chat from './Chat';
-import { Login } from './Components/Login';
+// import Chat from './Chat';
+import { ChatBar } from './Components'
+import Login from './Login'
+// import { Login } from './Components/Login';
 
 function App() {
 	const [{ user }] = useStateValue();
@@ -94,7 +96,8 @@ function App() {
 				!user ? (<Login />) : (
 			<div class="app__body">
 				<Sidebar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
-				<Chat messages={messages} currentRoom={currentRoom}/>
+				{/* <Chat messages={messages} currentRoom={currentRoom}/> */}
+				<ChatBar messages={messages} currentRoom={currentRoom}/>
 			</div>
 				)
 			}	
