@@ -4,7 +4,7 @@ import { SideBarHeaderStyles } from './Styles';
 import { Avatar, IconButton } from "@material-ui/core";
 import { DonutLarge, Chat, MoreVert } from "@material-ui/icons"
 
-export function SideBarChats({ photoURL }) {
+export function SideBarHeader({ photoURL }) {
     const classes = SideBarHeaderStyles();
 
     return (
