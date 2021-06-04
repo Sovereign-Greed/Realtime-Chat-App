@@ -4,9 +4,7 @@ import axios from './axios';
 import './App.css';
 import { useStateValue } from "./StateProvider";
 
-// componenets
-// import Sidebar from './Sidebar';
-// import Chat from './Chat';
+// components
 import { ChatBar, SideBar } from './Components'
 import Login from './Login'
 // import { Login } from './Components/Login';
@@ -96,8 +94,6 @@ function App() {
 				!user ? (<Login />) : (
 			<div class="app__body">
 				<SideBar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
-				{/* <Sidebar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/> */}
-				{/* <Chat messages={messages} currentRoom={currentRoom}/> */}
 				<ChatBar messages={messages} currentRoom={currentRoom}/>
 			</div>
 				)
