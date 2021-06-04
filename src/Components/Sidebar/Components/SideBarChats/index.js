@@ -2,7 +2,6 @@ import React from 'react';
 import { SideBarChatsStyles } from './Styles';
 
 import { Avatar } from "@material-ui/core";
-import classes from '*.module.css';
 
 // local component to render a side panel
 function SidePanel({ roomName, lastTimestamp, roomID, sendRoomID }) {
