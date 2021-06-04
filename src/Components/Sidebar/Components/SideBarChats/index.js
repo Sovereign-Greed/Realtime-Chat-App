@@ -6,10 +6,11 @@ import { Avatar } from "@material-ui/core";
 // local component to render a side panel
 function SidePanel({ roomName, lastTimestamp, roomID, sendRoomID }) {
     const randNum = () => (Math.floor(Math.random() * 5000))
+    const classes = SideBarChatsStyles();
 	return (
-		<div className='sidePanel' onClick={() => sendRoomID(roomID)}>
+		<div className={classes.sidePanel} onClick={() => sendRoomID(roomID)}>
 			<Avatar src={`https://avatars.dicebear.com/api/human/${randNum()}.svg`}/>
-			<div className="sidePanelInfo">
+			<div className={classes.sidePanelInfo}>
 				<h2 className={classes.sidePanelName}>{roomName}</h2>
 				<p>{lastTimestamp}</p>
 			</div>
