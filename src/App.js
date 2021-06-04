@@ -5,8 +5,8 @@ import './App.css';
 import { useStateValue } from "./StateProvider";
 
 // components
-import { ChatBar, SideBar } from './Components'
-import Login from './Login'
+import { Login, ChatBar, SideBar } from './Components'
+// import Login from './Login'
 // import { Login } from './Components/Login';
 
 function App() {

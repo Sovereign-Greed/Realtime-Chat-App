@@ -3,8 +3,8 @@ import { ChatBarStyles } from './Styles';
 
 import { ChatHeader, ChatBody, ChatFooter } from './Components'
 
-import axios from '../../axios';
-import { useStateValue } from "../../StateProvider";
+import axios from '../../API';
+import { useStateValue } from "../../Redux/StateProvider";
 
 export function ChatBar({ messages, currentRoom }) {
     const classes = ChatBarStyles();

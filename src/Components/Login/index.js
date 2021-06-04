@@ -1,10 +1,13 @@
 import React from 'react';
-import './Styles.css'
+import { LoginStyles } from './Styles'
 
 import { Button } from '@material-ui/core';
-import { actionTypes, auth, provider, useStateValue } from "../../Redux";
+import { useStateValue } from "../../Redux/StateProvider";
+import { auth, provider } from '../../Redux/Firebase';
+import { actionTypes } from '../../Redux/Reducer'
 
 export function Login() {
+	const classes = LoginStyles();
 	const [{}, dispatch] = useStateValue();
 	
 	const signIn = () => {
@@ -19,15 +22,19 @@ export function Login() {
 	}
 	
 	return (
-		<div className="login">
-			<div className="login__container">
-				<img src="https://i.pinimg.com/originals/e9/ae/30/e9ae3039f070dca71c81ecd3ddb74156.png" alt="chatter-logo"/>
+		<div className={classes.login}>
+			<div className={classes.loginContainer}>
+				<img 
+					className={classes.loginLogo}
+					src="https://i.pinimg.com/originals/e9/ae/30/e9ae3039f070dca71c81ecd3ddb74156.png" 
+					alt="chatter-logo"
+				/>
 				
 				<div className="login__text">
 					<h1>Sign In to Chatter</h1>
 				</div>
 				
-				<Button  onClick={signIn}>
+				<Button className={classes.loginButton} onClick={signIn}>
 					Sign In With Google
 				</Button>
 			</div>
