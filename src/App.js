@@ -5,9 +5,9 @@ import './App.css';
 import { useStateValue } from "./StateProvider";
 
 // components
-import { Login, ChatBar, SideBar } from './Components'
+import { ChatBar, SideBar } from './Components'
 // import Login from './Login'
-// import { Login } from './Components/Login';
+import { Login } from './Components/Login';
 
 function App() {
 	const [{ user }] = useStateValue();

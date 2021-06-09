@@ -2,13 +2,16 @@ import React from 'react';
 import { LoginStyles } from './Styles'
 
 import { Button } from '@material-ui/core';
-import { useStateValue } from "../../Redux/StateProvider";
-import { auth, provider } from '../../Redux/Firebase';
-import { actionTypes } from '../../Redux/Reducer'
+// import { useStateValue } from "../../Redux/StateProvider";
+// import { auth, provider } from '../../Redux/Firebase';
+// import { actionTypes } from '../../Redux/Reducer'
+import { useStateValue } from '../../StateProvider';
+import { auth, provider } from '../../firebase';
+import { actionTypes } from '../../reducer';
 
 export function Login() {
-	const classes = LoginStyles();
 	const [{}, dispatch] = useStateValue();
+	const classes = LoginStyles();
 	
 	const signIn = () => {
 		auth.signInWithPopup(provider)
