@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { SideBarStyles } from './Styles';
 import { SideBarChats, SideBarHeader, SideBarSearch } from './Components';
 
-import { useStateValue } from "../../StateProvider";
-import axios from '../../axios';
+import { useStateValue } from "../../Redux/StateProvider";
+import axios from '../../Redux/axios';
 
 export function SideBar({ rooms, updateCurrentRoom }) {
     const classes = SideBarStyles();

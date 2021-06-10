@@ -2,12 +2,9 @@ import React from 'react';
 import { LoginStyles } from './Styles'
 
 import { Button } from '@material-ui/core';
-// import { useStateValue } from "../../Redux/StateProvider";
-// import { auth, provider } from '../../Redux/Firebase';
-// import { actionTypes } from '../../Redux/Reducer'
-import { useStateValue } from '../../StateProvider';
-import { auth, provider } from '../../firebase';
-import { actionTypes } from '../../reducer';
+import { useStateValue } from '../../Redux/StateProvider';
+import { auth, provider } from '../../Redux/firebase';
+import { actionTypes } from '../../Redux/reducer';
 
 export function Login() {
 	const [{}, dispatch] = useStateValue();
@@ -29,7 +26,7 @@ export function Login() {
 			<div className={classes.loginContainer}>
 				<img 
 					className={classes.loginLogo}
-					src="https://i.pinimg.com/originals/e9/ae/30/e9ae3039f070dca71c81ecd3ddb74156.png" 
+					src="chatter-logo.png" 
 					alt="chatter-logo"
 				/>
 				

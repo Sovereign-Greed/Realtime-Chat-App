@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Pusher from 'pusher-js';
-import axios from './axios';
+import axios from './Redux/axios';
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux'
-import { useStateValue } from "./StateProvider";
+
+import { useStateValue } from "./Redux/StateProvider";
 
 // components
 import { ChatBar, SideBar } from './Components'
@@ -95,8 +95,8 @@ function App() {
 				!user ? (<Login />) : (
 			<div class="app__body">
 				<SideBar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
-				<ChatBar />
-				{/* messages={messages} currentRoom={currentRoom} */}
+				<ChatBar messages={messages} currentRoom={currentRoom}/>
+				
 			</div>
 				)
 			}	
