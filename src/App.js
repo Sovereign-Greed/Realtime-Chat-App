@@ -6,9 +6,7 @@ import './App.css';
 import { useStateValue } from "./Redux/StateProvider";
 
 // components
-import { ChatBar, SideBar } from './Components'
-// import Login from './Login'
-import { Login } from './Components/Login';
+import { ChatBar, SideBar, Login } from './Components'
 
 function App() {
 	const [{ user }] = useStateValue();
