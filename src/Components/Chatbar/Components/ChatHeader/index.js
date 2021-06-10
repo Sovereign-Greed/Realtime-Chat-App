@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChatHeaderStyles } from './Styles';
+import { changeDate } from '../../../../Functions'
 
 import { SearchOutlined, AttachFile, MoreVert } from "@material-ui/icons/";
 import { Avatar, IconButton } from '@material-ui/core';
@@ -13,7 +14,7 @@ export function ChatHeader({ roomName, timestamp, seed}) {
 
             <div className={classes.headerInfo}>
                 <h3>{roomName}</h3>
-                <p>{timestamp}</p>
+                <p>{changeDate(timestamp.slice(0,25))}</p>
             </div>
 
             <div className={classes.headerRight}>

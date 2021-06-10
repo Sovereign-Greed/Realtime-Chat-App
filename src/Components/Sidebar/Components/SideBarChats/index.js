@@ -1,5 +1,6 @@
 import React from 'react';
 import { SideBarChatsStyles } from './Styles';
+import { changeDate } from '../../../../Functions'
 
 import { Avatar } from "@material-ui/core";
 
@@ -12,7 +13,7 @@ function SidePanel({ roomName, lastTimestamp, roomID, sendRoomID }) {
 			<Avatar src={`https://avatars.dicebear.com/api/human/${randNum()}.svg`}/>
 			<div className={classes.sidePanelInfo}>
 				<h2 className={classes.sidePanelName}>{roomName}</h2>
-				<p>{lastTimestamp}</p>
+				{lastTimestamp && <p>{changeDate(lastTimestamp.slice(0,25))}</p>}
 			</div>
 		</div>
 	) 

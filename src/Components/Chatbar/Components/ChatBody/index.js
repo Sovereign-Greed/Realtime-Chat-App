@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChatBodyStyles } from './Styles';
+import { changeDate } from '../../../../Functions'
 
 export function ChatBody({ messages, username }) {
     const classes = ChatBodyStyles();
@@ -14,7 +15,7 @@ export function ChatBody({ messages, username }) {
                     >	
                         <span className={classes.name}>{message.name}</span>
 						{message.message}
-						<span className={classes.timestamp}>{message.timestamp}</span>
+						<span className={classes.timestamp}>{changeDate(message.timestamp.slice(0,25))}</span>
 					</p>
                 ))
             }
