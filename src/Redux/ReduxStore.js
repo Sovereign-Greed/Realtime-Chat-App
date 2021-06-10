@@ -78,6 +78,8 @@ export const ReduxStore = createSlice({
         user: null,
         allChatRooms: [],
         currentRoom: null,
+        currentMessages: null,
+        action: null,
         // messages
         getUserMessage: '',
         getChatRoomMessage: '',
@@ -104,9 +106,11 @@ export const ReduxStore = createSlice({
             isGettingChatRoom: true
         }),
         [GetChatRoomThunk.fulfilled] : (state, action) => {
-            console.log(action)
             return {
                 ...state,
+                currentRoom: action?.payload,
+                currentMessages: action?.payload?.messages,
+                action: action,
                 isGettingChatRoom: false,
                 getChatRoomMessage: 'Successfully acquired Chat Room',
                 getChatRoomMessageState: 'success'

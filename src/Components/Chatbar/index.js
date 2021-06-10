@@ -2,19 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { ChatBarStyles } from './Styles';
 
 import { ChatHeader, ChatBody, ChatFooter } from './Components'
+import { useSelector, useDispatch } from 'react-redux'
+import { GetChatRoomThunk } from '../../Redux/ReduxStore'
 
-import axios from '../../API/axios';
-import { useStateValue } from "../../Redux/StateProvider";
+import { useStateValue } from "../../StateProvider";
+import axios from '../../axios';
 
-export function ChatBar({ messages, currentRoom }) {
+export function ChatBar() {
     const classes = ChatBarStyles();
+    const dispatch = useDispatch();
+    const { action, currentRoom, currentMessages } = useSelector((state) => state.ReduxStore);
 
     const [input, setInput] = useState('');
 	const [{ user }] = useStateValue();
 	const [seed, setSeed] = useState('');
 	
-    useEffect(() => {
-		setSeed(Math.floor(Math.random() * 5000));
+    useEffect(async () => {
+		setSeed(Math.floor(Math.random() * 5000))
+        await dispatch(GetChatRoomThunk({room_id: currentRoom._id}));
+        await console.log(action)
 	}, []);
 
     // input on change handle
@@ -39,6 +45,7 @@ export function ChatBar({ messages, currentRoom }) {
 		setInput('');
 	}
 
+    if (currentRoom === null ) return (<div/>)
     return (
         <div className={classes.chatBar}>          
             <ChatHeader
@@ -47,7 +54,7 @@ export function ChatBar({ messages, currentRoom }) {
                 timestamp={currentRoom.lastTimestamp}
             />
             <ChatBody 
-                messages={messages}
+                messages={currentMessages}
                 username={user.displayName}
             />
             <ChatFooter 

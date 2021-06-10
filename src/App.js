@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Pusher from 'pusher-js';
 import axios from './axios';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
 import { useStateValue } from "./StateProvider";
 
 // components
@@ -11,7 +12,7 @@ import { Login } from './Components/Login';
 
 function App() {
 	const [{ user }] = useStateValue();
-
+	
 	const [messages, setMessages] = useState([]);
 	const [rooms, setRooms] = useState([]);
 	const [currentRoomID, setCurrentRoomID] = useState('5fc7c2c7624b361bc614ad83');
@@ -94,7 +95,8 @@ function App() {
 				!user ? (<Login />) : (
 			<div class="app__body">
 				<SideBar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
-				<ChatBar messages={messages} currentRoom={currentRoom}/>
+				<ChatBar />
+				{/* messages={messages} currentRoom={currentRoom} */}
 			</div>
 				)
 			}	
