@@ -20,16 +20,16 @@ export function SideBar({ rooms, updateCurrentRoom }) {
     }
 
     const handleChatroomSubmit = (values) => {
-        alert(values);
+        console.log(values);
     }
 
-    const createNewChat = async(e) => {
-		e.preventDefault()
-		await axios.post('/rooms/new', {
-			roomName: input,
-		})
-		setInput('');
-	}
+    // const createNewChat = async(e) => {
+	// 	e.preventDefault()
+	// 	await axios.post('/rooms/new', {
+	// 		roomName: input,
+	// 	})
+	// 	setInput('');
+	// }
 	
 	const sendRoomID = (id) => {
 		updateCurrentRoom(id);
@@ -39,11 +39,12 @@ export function SideBar({ rooms, updateCurrentRoom }) {
         <div className={classes.sideBar}>
             <SideBarHeader
                 photoURL={user?.photoURL}
+                username={user?.displayName}
             />
 
             <SideBarCreate 
                 handleSubmit={(values) => handleChatroomSubmit(values)}
-                createNewChat={createNewChat}
+                // createNewChat={createNewChat}
                 openDialog={openDialog}
                 closeDialog={closeDialog}
                 dialogStatus={dialogStatus}

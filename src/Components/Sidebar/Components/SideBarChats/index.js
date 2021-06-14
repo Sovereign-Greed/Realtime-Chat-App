@@ -11,6 +11,7 @@ function SidePanel({ roomName, lastTimestamp, roomID, sendRoomID }) {
 	return (
 		<div className={classes.sidePanel} onClick={() => sendRoomID(roomID)}>
 			<Avatar src={`https://avatars.dicebear.com/api/human/${randNum()}.svg`}/>
+            <h2 className={classes.sidePanelMobileName}>{roomName}</h2>
 			<div className={classes.sidePanelInfo}>
 				<h2 className={classes.sidePanelName}>{roomName}</h2>
 				{lastTimestamp && <p>{changeDate(lastTimestamp.slice(0,25))}</p>}

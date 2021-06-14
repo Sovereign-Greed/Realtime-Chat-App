@@ -1,8 +1,17 @@
 import { makeStyles } from '@material-ui/core';
 
 export const SideBarCreateStyles = makeStyles((theme) => ({
-    button: {
-        borderRadius: 30
+    iconButton: {
+        [theme.breakpoints.up('sm')] : {
+            display: 'none',
+        }
+    },
+    fullButton: {
+        borderRadius: 30,
+        // backgroundColor: 'red',
+        [theme.breakpoints.down('xs')] : {
+            display: 'none',
+        }
     },
     dialog: {
         // backgroundColor: 'red'
@@ -25,21 +34,10 @@ export const SideBarCreateStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#f6f6f6',
-        // height: 39,
+        height: 39,
         padding: 10,
+        [theme.breakpoints.down('xs')] : {
+            justifyContent: 'center'
+        }
     },
-    // searchForm: {
-    //     display: 'flex',
-    //     flex: 1,
-    // },
-    // searchInput: {
-    //     flex: 1,
-    //     borderRadius: 30,
-    //     padding: 10,
-    //     border: 'none',
-    //     outlineWidth: 0,
-    // },
-    // searchButton: {
-    //     display: 'none'
-    // }
 }));

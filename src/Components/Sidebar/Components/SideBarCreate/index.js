@@ -9,7 +9,8 @@ import {
     FormControl,
     InputLabel,
     Select,
-    MenuItem
+    MenuItem,
+    IconButton
 } from '@material-ui/core';
 import { AddCircleOutline } from '@material-ui/icons';
 import { SideBarCreateStyles } from './Styles';
@@ -39,10 +40,16 @@ export function SideBarCreate({ createNewChat, dialogStatus, closeDialog, openDi
 
     return (
         <div className={classes.search}>
+            <IconButton
+                className={classes.iconButton}
+                onClick={() => openDialog()}
+            >
+                <AddCircleOutline />
+            </IconButton> 
             <Button 
+                className={classes.fullButton}
                 variant="contained"
-                color="secondary"
-                className={classes.button}
+                // color="secondary"
                 startIcon={<AddCircleOutline />}
                 fullWidth
                 onClick={() => openDialog()}
