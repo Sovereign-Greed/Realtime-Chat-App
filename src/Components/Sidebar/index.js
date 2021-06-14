@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SideBarStyles } from './Styles';
-import { SideBarChats, SideBarHeader, SideBarSearch } from './Components';
+import { SideBarChats, SideBarHeader, SideBarCreate } from './Components';
 
 import { useStateValue } from "../../Redux/StateProvider";
 import axios from '../../Redux/axios';
@@ -8,13 +8,8 @@ import axios from '../../Redux/axios';
 export function SideBar({ rooms, updateCurrentRoom }) {
     const classes = SideBarStyles();
 
-    const [input, setInput] = useState('');
     const [dialogStatus, setDialogStatus] = useState(false);
 	const [{ user }] = useStateValue();
-
-    const handleInputChange = (e) => {
-        setInput(e.target.value);
-    }
 
     const openDialog = () => {
         setDialogStatus(true);
@@ -22,6 +17,10 @@ export function SideBar({ rooms, updateCurrentRoom }) {
 
     const closeDialog = () => {
         setDialogStatus(false);
+    }
+
+    const handleChatroomSubmit = (values) => {
+        alert(values);
     }
 
     const createNewChat = async(e) => {
@@ -42,9 +41,8 @@ export function SideBar({ rooms, updateCurrentRoom }) {
                 photoURL={user?.photoURL}
             />
 
-            <SideBarSearch 
-                input={input}
-                handleChange={handleInputChange}
+            <SideBarCreate 
+                handleSubmit={(values) => handleChatroomSubmit(values)}
                 createNewChat={createNewChat}
                 openDialog={openDialog}
                 closeDialog={closeDialog}
