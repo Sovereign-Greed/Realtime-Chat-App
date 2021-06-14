@@ -10,16 +10,31 @@ export const SideBarChatsStyles = makeStyles((theme) => ({
         display: 'flex',
         padding: 20,
         cursor: 'pointer',
+        alignItems: 'center',
         borderBottom: '1px solid #f6f6f6',
         '&:hover': {
             background: "#ebebeb",
         },
+        [theme.breakpoints.down('xs')] : {
+            justifyContent: 'center',
+            flexDirection: 'column',
+        }
     },
     sidePanelInfo: {
         marginLeft: 15,
+        [theme.breakpoints.down('xs')] : {
+            display: 'none'
+        }
     },
     sidePanelName: {
         fontSize: 16,
         marginBottom: 8,
+    },
+    sidePanelMobileName: {
+        fontSize: 12,
+        textAlign: 'center',
+        [theme.breakpoints.up('sm')] : {
+            display: 'none'
+        }
     }
 }));

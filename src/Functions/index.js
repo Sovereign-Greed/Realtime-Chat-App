@@ -1,8 +1,18 @@
 import { createMuiTheme } from '@material-ui/core';
+import { Camera, Flare, Fireplace, AcUnit, OfflineBolt, CloudCircle } from '@material-ui/icons'
 
 export function changeDate(date) {
     const newDate = new Date(date).toLocaleString();
     return (newDate !== 'Invalid Date' ? newDate : date); 
+}
+
+export const chatroomIcons = {
+  Camera: <Camera />,
+  Flare: <Flare />,
+  Fireplace: <Fireplace />,
+  AcUnit: <AcUnit />,
+  OfflineBolt: <OfflineBolt />,
+  CloudCircle: <CloudCircle />
 }
 
 export const theme = createMuiTheme({
@@ -26,23 +36,23 @@ export const theme = createMuiTheme({
       xl: 1920
     }
   },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '*::-webkit-scrollbar': {
-          width: '8px',
-          height: '8px',
-          backgroundColor: '#aaa',
-        },
-        '*::-webkit-scrollbar-track': {
-          '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.3)',
-          borderRadius: '10px',
-        },
-        '*::-webkit-scrollbar-thumb': {
-          '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.5)',
-          borderRadius: '10px',
-        }
-      }
-    }
-  }
+  // overrides: {
+  //   MuiCssBaseline: {
+  //     '@global': {
+  //       '*::-webkit-scrollbar': {
+  //         width: '8px',
+  //         height: '8px',
+  //         backgroundColor: '#aaa',
+  //       },
+  //       '*::-webkit-scrollbar-track': {
+  //         '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.3)',
+  //         borderRadius: '10px',
+  //       },
+  //       '*::-webkit-scrollbar-thumb': {
+  //         '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.5)',
+  //         borderRadius: '10px',
+  //       }
+  //     }
+  //   }
+  // }
 });

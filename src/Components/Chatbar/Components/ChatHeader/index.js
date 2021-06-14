@@ -4,28 +4,31 @@ import { changeDate } from '../../../../Functions'
 
 import { SearchOutlined, AttachFile, MoreVert } from "@material-ui/icons/";
 import { Avatar, IconButton } from '@material-ui/core';
+import { chatroomIcons } from '../../../../Functions';
 
-export function ChatHeader({ roomName, timestamp, seed}) {
+export function ChatHeader({ roomName, roomIcon, timestamp }) {
     const classes = ChatHeaderStyles();
-
+    
     return (
         <div className={classes.header}>
-            <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
+            <Avatar>
+                {roomIcon ? chatroomIcons[roomIcon] : chatroomIcons.Camera}
+            </Avatar>
 
             <div className={classes.headerInfo}>
                 <h3>{roomName}</h3>
-                <p>{changeDate(timestamp.slice(0,25))}</p>
+                <p className={classes.timestamp}>{timestamp && changeDate(timestamp.slice(0,25))}</p>
             </div>
 
             <div className={classes.headerRight}>
                 <IconButton>
-					<SearchOutlined />
+					<SearchOutlined className={classes.iconButton}/>
 				</IconButton>
 				<IconButton>
-					<AttachFile />
+					<AttachFile className={classes.iconButton}/>
 				</IconButton>
 				<IconButton>
-					<MoreVert />
+					<MoreVert className={classes.iconButton}/>
 				</IconButton>
             </div>
         </div>
