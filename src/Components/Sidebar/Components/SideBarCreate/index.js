@@ -17,7 +17,7 @@ import { SideBarCreateStyles } from './Styles';
 import { ChatroomValidation } from './ChatroomValidation'
 import { useFormik } from 'formik';
 
-export function SideBarCreate({ createNewChat, dialogStatus, closeDialog, openDialog, handleSubmit }) {
+export function SideBarCreate({ dialogStatus, closeDialog, openDialog, handleSubmit }) {
     const classes = SideBarCreateStyles();
 
     const iconsTypes = [
@@ -49,8 +49,6 @@ export function SideBarCreate({ createNewChat, dialogStatus, closeDialog, openDi
             <Button 
                 className={classes.fullButton}
                 variant="contained"
-                // color="secondary"
-                startIcon={<AddCircleOutline />}
                 fullWidth
                 onClick={() => openDialog()}
             >

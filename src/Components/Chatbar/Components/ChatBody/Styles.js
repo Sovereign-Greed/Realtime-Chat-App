@@ -15,7 +15,10 @@ export const ChatBodyStyles = makeStyles((theme) => ({
         width: 'fit-content',
         borderRadius: 10,
         backgroundColor: '#ffffff',
-        marginBottom: 30
+        marginBottom: 30,
+        [theme.breakpoints.down('xs')] : {
+            fontSize: 12
+        }
     },
     reciever: {
         position: 'relative',
@@ -25,7 +28,10 @@ export const ChatBodyStyles = makeStyles((theme) => ({
         borderRadius: 10,
         backgroundColor: '#dcf8c9',
         marginBottom: 30,
-        marginLeft: 'auto'
+        marginLeft: 'auto',
+        [theme.breakpoints.down('xs')] : {
+            fontSize: 12
+        }
     },
     name: {
         position: 'absolute',
@@ -35,6 +41,9 @@ export const ChatBodyStyles = makeStyles((theme) => ({
     },
     timestamp: {
         marginLeft: 10,
-        fontSize: 'xx-small'
+        fontSize: 'xx-small',
+        [theme.breakpoints.down('xs')] : {
+            display: 'none'
+        }
     }
 }));

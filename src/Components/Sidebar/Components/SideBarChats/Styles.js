@@ -10,13 +10,13 @@ export const SideBarChatsStyles = makeStyles((theme) => ({
         display: 'flex',
         padding: 20,
         cursor: 'pointer',
+        alignItems: 'center',
         borderBottom: '1px solid #f6f6f6',
         '&:hover': {
             background: "#ebebeb",
         },
         [theme.breakpoints.down('xs')] : {
             justifyContent: 'center',
-            alignItems: 'center',
             flexDirection: 'column',
         }
     },

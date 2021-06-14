@@ -13,7 +13,6 @@ export const SideBarHeaderStyles = makeStyles((theme) => ({
     headerLeft: {
         display: 'flex',
         alignItems: 'center',
-        // justifyContent: 'space-between',
         justifyContent: 'flex-start',
         minWidth: '10vw',
         [theme.breakpoints.down('xs')] : {

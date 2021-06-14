@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ChatBarStyles } from './Styles';
 import { ChatHeader, ChatBody, ChatFooter } from './Components'
 
@@ -10,11 +10,6 @@ export function ChatBar({ messages, currentRoom }) {
 
     const [input, setInput] = useState('');
 	const [{ user }] = useStateValue();
-	const [seed, setSeed] = useState('');
-	
-    useEffect(() => {
-		setSeed(Math.floor(Math.random() * 5000))
-	}, []);
 
     // input on change handle
     const handleChange = (e) => {
@@ -42,7 +37,6 @@ export function ChatBar({ messages, currentRoom }) {
     return (
         <div className={classes.chatBar}>          
             <ChatHeader
-                seed={seed} 
                 roomName={currentRoom.roomName}
                 timestamp={currentRoom.lastTimestamp}
             />

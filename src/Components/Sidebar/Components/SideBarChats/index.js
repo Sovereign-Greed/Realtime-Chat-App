@@ -1,16 +1,17 @@
 import React from 'react';
 import { SideBarChatsStyles } from './Styles';
-import { changeDate } from '../../../../Functions'
+import { changeDate, chatroomIcons } from '../../../../Functions'
 
 import { Avatar } from "@material-ui/core";
 
 // local component to render a side panel
-function SidePanel({ roomName, lastTimestamp, roomID, sendRoomID }) {
-    const randNum = () => (Math.floor(Math.random() * 5000))
+function SidePanel({ roomName, roomIcon, lastTimestamp, roomID, sendRoomID }) {
     const classes = SideBarChatsStyles();
 	return (
 		<div className={classes.sidePanel} onClick={() => sendRoomID(roomID)}>
-			<Avatar src={`https://avatars.dicebear.com/api/human/${randNum()}.svg`}/>
+            <Avatar>
+                {roomIcon ? chatroomIcons[roomIcon] : chatroomIcons.Camera}
+            </Avatar>
             <h2 className={classes.sidePanelMobileName}>{roomName}</h2>
 			<div className={classes.sidePanelInfo}>
 				<h2 className={classes.sidePanelName}>{roomName}</h2>

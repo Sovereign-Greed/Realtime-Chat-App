@@ -9,11 +9,24 @@ export const ChatHeaderStyles = makeStyles((theme) => ({
     },
     headerInfo: {
         flex: 1,
-        paddingLeft: 20
+        paddingLeft: 20,
+        [theme.breakpoints.down('sm')] : {
+            fontSize: 12
+        }
+    },
+    timestamp: {
+        [theme.breakpoints.down('xs')] : {
+            display: 'none'
+        }
     },
     headerRight: {
         display: 'flex',
         justifyContent: 'space-between',
-        minWidth: 100
+        // minWidth: 100
+    },
+    iconButton: {
+        [theme.breakpoints.down('sm')] : {
+            fontSize: 16,
+        }
     }
 }));
