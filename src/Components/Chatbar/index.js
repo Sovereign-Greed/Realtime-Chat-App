@@ -38,6 +38,7 @@ export function ChatBar({ messages, currentRoom }) {
         <div className={classes.chatBar}>          
             <ChatHeader
                 roomName={currentRoom.roomName}
+                roomIcon={currentRoom.roomIcon} 
                 timestamp={currentRoom.lastTimestamp}
             />
             <ChatBody 

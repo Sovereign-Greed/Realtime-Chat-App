@@ -5,7 +5,7 @@ import App from './App';
 import { ThemeProvider } from '@material-ui/core';
 import { theme } from './Functions';
 
-import reducer, { initialState } from "./Redux/reducer";
+import reducer, { initialState } from "./Redux/Reducer";
 import { StateProvider } from "./Redux/StateProvider";
 
 ReactDOM.render(

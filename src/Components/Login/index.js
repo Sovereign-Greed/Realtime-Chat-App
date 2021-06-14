@@ -4,7 +4,7 @@ import { LoginStyles } from './Styles'
 import { Button } from '@material-ui/core';
 import { useStateValue } from '../../Redux/StateProvider';
 import { auth, provider } from '../../Redux/firebase';
-import { actionTypes } from '../../Redux/reducer';
+import { actionTypes } from '../../Redux/Reducer';
 
 export function Login() {
 	const [{}, dispatch] = useStateValue();

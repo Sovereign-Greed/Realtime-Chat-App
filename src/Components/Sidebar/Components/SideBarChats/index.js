@@ -29,7 +29,8 @@ export function SideBarChats({ rooms, sendRoomID }) {
             {
                 rooms.map((room, index) => (
                     <SidePanel 
-                        roomName={room.roomName} 
+                        roomName={room.roomName}
+                        roomIcon={room.roomIcon} 
                         lastTimestamp={room.lastTimestamp}
                         roomID={room._id}
                         key={index}
