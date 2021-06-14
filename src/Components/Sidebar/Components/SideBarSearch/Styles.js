@@ -5,7 +5,7 @@ export const SideBarSearchStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#f6f6f6',
-        height: 39,
+        // height: 39,
         padding: 10,
     },
     searchForm: {

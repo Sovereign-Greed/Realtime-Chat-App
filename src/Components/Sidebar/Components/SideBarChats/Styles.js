@@ -16,7 +16,7 @@ export const SideBarChatsStyles = makeStyles((theme) => ({
         },
     },
     sidePanelInfo: {
-        marginLeft: 15
+        marginLeft: 15,
     },
     sidePanelName: {
         fontSize: 16,
