@@ -14,7 +14,7 @@ export function ChatHeader({ roomName, timestamp, seed}) {
 
             <div className={classes.headerInfo}>
                 <h3>{roomName}</h3>
-                <p>{changeDate(timestamp.slice(0,25))}</p>
+                <p>{timestamp && changeDate(timestamp.slice(0,25))}</p>
             </div>
 
             <div className={classes.headerRight}>

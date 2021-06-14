@@ -9,10 +9,19 @@ export function SideBar({ rooms, updateCurrentRoom }) {
     const classes = SideBarStyles();
 
     const [input, setInput] = useState('');
+    const [dialogStatus, setDialogStatus] = useState(false);
 	const [{ user }] = useStateValue();
 
     const handleInputChange = (e) => {
         setInput(e.target.value);
+    }
+
+    const openDialog = () => {
+        setDialogStatus(true);
+    }
+
+    const closeDialog = () => {
+        setDialogStatus(false);
     }
 
     const createNewChat = async(e) => {
@@ -37,6 +46,9 @@ export function SideBar({ rooms, updateCurrentRoom }) {
                 input={input}
                 handleChange={handleInputChange}
                 createNewChat={createNewChat}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+                dialogStatus={dialogStatus}
             />
 
             <SideBarChats 
