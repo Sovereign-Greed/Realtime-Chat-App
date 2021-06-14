@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Pusher from 'pusher-js';
-import axios from './axios';
+import axios from './Redux/axios';
 import './App.css';
-import { useStateValue } from "./StateProvider";
 
-// componenets
-import Sidebar from './Sidebar';
-import Chat from './Chat';
-import Login from './Login';
+import { useStateValue } from "./Redux/StateProvider";
+
+// components
+import { ChatBar, SideBar, Login } from './Components'
 
 function App() {
 	const [{ user }] = useStateValue();
-
+	
 	const [messages, setMessages] = useState([]);
 	const [rooms, setRooms] = useState([]);
 	const [currentRoomID, setCurrentRoomID] = useState('5fc7c2c7624b361bc614ad83');
@@ -93,8 +92,9 @@ function App() {
 			{ 
 				!user ? (<Login />) : (
 			<div class="app__body">
-				<Sidebar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
-				<Chat messages={messages} currentRoom={currentRoom}/>
+				<SideBar rooms={rooms} updateCurrentRoom={updateCurrentRoom}/>
+				<ChatBar messages={messages} currentRoom={currentRoom}/>
+				
 			</div>
 				)
 			}	
