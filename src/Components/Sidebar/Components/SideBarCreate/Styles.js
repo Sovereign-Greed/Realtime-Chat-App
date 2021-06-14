@@ -8,6 +8,7 @@ export const SideBarCreateStyles = makeStyles((theme) => ({
     },
     fullButton: {
         borderRadius: 30,
+        fontWeight: 700,
         // backgroundColor: 'red',
         [theme.breakpoints.down('xs')] : {
             display: 'none',
