@@ -26,7 +26,7 @@ export const LoginStyles = makeStyles((theme) => ({
         marginTop: 50,
         '&&': {
             textTransform: 'inherit',
-            backgroundColor: '#0a8d48'
+            backgroundColor: '#40E0D0'
         },
         color: 'white'
     }
