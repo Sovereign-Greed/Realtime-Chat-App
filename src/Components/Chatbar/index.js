@@ -7,11 +7,10 @@ import axios from '../../Redux/axios';
 
 export function ChatBar({ messages, currentRoom }) {
     const classes = ChatBarStyles();
-
-	const [{ user }] = useStateValue();
+    const [{ user }] = useStateValue();
 
     // message submit handle
-    const sendMessage = async(values) => {
+    const sendMessage = async(values,  {setSubmitting, setErrors, setStatus, resetForm}) => {
 		let current = new Date();
 		let timestamp = current.toUTCString().slice(0,28);
 
@@ -20,8 +19,9 @@ export function ChatBar({ messages, currentRoom }) {
 			name: user.displayName,
 			timestamp: timestamp,
 			received: true,
-		})
+		});
 
+        resetForm({});
 	}
 
     if (currentRoom === null ) return (<div/>)
