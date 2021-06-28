@@ -8,7 +8,6 @@ import axios from '../../Redux/axios';
 export function ChatBar({ messages, currentRoom }) {
     const classes = ChatBarStyles();
 
-
 	const [{ user }] = useStateValue();
 
     // message submit handle
