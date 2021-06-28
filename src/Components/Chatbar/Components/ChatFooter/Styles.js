@@ -6,18 +6,15 @@ export const ChatFooterStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 62,
-        borderTop: '1px solid lightgray'
+        borderTop: '1px solid lightgray',
+        padding: 20,
     },
     messageForm: {
         flex: 1,
         display: 'flex'
     },
     messageInput: {
-        flex: 1,
-        borderRadius: 30,
-        padding: 10,
-        border: 'none',
-        outlineWidth: 0,
+        backgroundColor: 'white',
     },
     messageButton: {
         display: 'none'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ChatBarStyles } from './Styles';
 import { ChatHeader, ChatBody, ChatFooter } from './Components'
 
@@ -8,29 +8,21 @@ import axios from '../../Redux/axios';
 export function ChatBar({ messages, currentRoom }) {
     const classes = ChatBarStyles();
 
-    const [input, setInput] = useState('');
+
 	const [{ user }] = useStateValue();
 
-    // input on change handle
-    const handleChange = (e) => {
-        setInput(e.target.value);
-    }
-
     // message submit handle
-    const sendMessage = async(e) => {
-		e.preventDefault();
-		
+    const sendMessage = async(values) => {
 		let current = new Date();
 		let timestamp = current.toUTCString().slice(0,28);
-		
+
 		await axios.post(`/${currentRoom._id}/messages/new`, {
-			message: input,
+			message: values.message,
 			name: user.displayName,
 			timestamp: timestamp,
 			received: true,
-		}) 
-		
-		setInput('');
+		})
+
 	}
 
     if (currentRoom === null ) return (<div/>)
@@ -46,9 +38,7 @@ export function ChatBar({ messages, currentRoom }) {
                 username={user.displayName}
             />
             <ChatFooter 
-                input={input}
-                handleChange={handleChange}
-                sendMessage={sendMessage}
+                handleSubmit={sendMessage}
             />
         </div>
     )
